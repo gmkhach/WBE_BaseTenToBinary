@@ -12,9 +12,9 @@ namespace BaseTenToBinary
             {
                 try
                 {
-                    Console.Write("\nEnter an integer betwen 1 and 100\n\n>>> ");
+                    Console.Write("\nEnter an integer betwen 0 and 100\n\n>>> ");
                     int input = int.Parse(Console.ReadLine());
-                    if (input < 1 || input > 100)
+                    if (input < 0 || input > 100)
                     {
                         Console.Clear();
                         throw new Exception("Invalid Entry!");
@@ -33,6 +33,11 @@ namespace BaseTenToBinary
 
         static int BaseTenToBinary(int baseTen)
         {
+            if (baseTen == 0)
+            {
+                return 0;
+            }
+
             string binary = string.Empty;
 
             // deviding the input number over two and collecting into a string
