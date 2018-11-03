@@ -33,11 +33,6 @@ namespace BaseTenToBinary
 
         static int BaseTenToBinary(int baseTen)
         {
-            if (baseTen == 0)
-            {
-                return 0;
-            }
-
             string binary = string.Empty;
 
             // deviding the input number over two and collecting into a string
@@ -47,7 +42,7 @@ namespace BaseTenToBinary
                 baseTen /= 2;
             }
 
-            return int.Parse(binary);
+            return string.IsNullOrEmpty(binary) ? 0: int.Parse(binary);
         }
     }
 }
