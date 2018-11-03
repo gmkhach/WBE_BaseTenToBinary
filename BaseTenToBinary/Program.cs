@@ -36,16 +36,20 @@ namespace BaseTenToBinary
             string binary = "1";
             Stack<string> myStack = new Stack<string>();
 
+            // deviding the input number over two and collecting the remainders into myStack
             while(baseTen != 1)
             {
                 myStack.Push(Convert.ToString(baseTen % 2));
                 baseTen = baseTen / 2;
             }
+
+            // building the binary equivalent of the inputted base 10 number from myStack
             while (myStack.Count != 0)
             {
                 binary += myStack.Pop();
             }
-                return int.Parse(binary);
+
+            return int.Parse(binary);
         }
     }
 }
